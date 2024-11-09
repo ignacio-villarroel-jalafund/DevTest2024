@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS Poll (
+    Id Int PRIMARY KEY,
+    Name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Options (
+    Id SERIAL PRIMARY KEY,
+    PollId SERIAL REFERENCES Poll(Id),
+    Name VARCHAR(50) NOT NULL,
+    Votes Int NOT NUll
+);
+
